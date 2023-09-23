@@ -89,14 +89,14 @@ class History extends StatelessWidget {
                                   Column(
                                     children: [
                                       Text('DPS', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white)),
-                                      Text('Demek Per Seken', style: TextStyle(fontSize: 12.0, color: Colors.white)),
+                                      Text('DemekPerSeken', style: TextStyle(fontSize: 12.0, color: Colors.white)),
                                     ],
                                   ),
                                   Icon(Icons.keyboard_double_arrow_right_sharp, color: Colors.white, size: 48.0),
                                   Column(
                                     children: [
                                       Text('JKT', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white)),
-                                      Text('fortyeit', style: TextStyle(fontSize: 12.0, color: Colors.white)),
+                                      Text('FortyEit', style: TextStyle(fontSize: 12.0, color: Colors.white)),
                                     ],
                                   ),
                                 ],

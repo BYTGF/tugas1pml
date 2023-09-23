@@ -36,7 +36,14 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            color: Colors.blueAccent,
+            decoration: BoxDecoration(
+              color: Colors.blueAccent,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(40.0), // Adjust the radius as needed
+                bottomRight: Radius.circular(40.0), // Adjust the radius as needed
+              ),
+               // You can add a border if necessary
+            ),
             padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
@@ -87,24 +94,28 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(4.0, 16.0, 0, 16.0),
-                    child: Text(
-                      'Choose Transportation',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
+                
               ],
             ),
           ),
-          ListView.builder(
+          Container(
+            alignment: Alignment.centerLeft,
+            
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+              child: Text(
+                'Choose Transportation',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueAccent,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(16.0),
+            child: ListView.builder(
             shrinkWrap: true, // Allow the inner ListView to scroll without conflict
             itemCount: transportationList.length,
             itemBuilder: (context, index) {
@@ -120,6 +131,7 @@ class HomePage extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: Card(
+                    color: Colors.blueAccent,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -127,24 +139,24 @@ class HomePage extends StatelessWidget {
                           children: [
                             Padding(
                               padding: EdgeInsets.all(16.0),
-                              child: Text(transportationList[index]["title"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36.0, color: Colors.blueAccent)),
+                              child: Text(transportationList[index]["title"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36.0, color: Colors.white)),
                             ),
                             Container(
                               margin: EdgeInsets.symmetric(vertical: 12.0),
                               child: Card(
-                                color: Colors.blueAccent,
+                                color: Colors.white,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsets.all(16.0),
-                                  child: Text('BOOK NOW', style: TextStyle(color: Colors.white, fontSize: 12.0)),
+                                  child: Text('BOOK NOW', style: TextStyle(color: Colors.blue, fontSize: 12.0)),
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        Icon(transportationList[index]["icon"], color: Colors.blueAccent , size: 120.0),
+                        Icon(transportationList[index]["icon"], color: Colors.white, size: 120.0),
                       ],
                     ),
                   ),
@@ -152,6 +164,8 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
+          ),
+          
         ],
       ),
     );
